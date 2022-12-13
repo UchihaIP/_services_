@@ -31,7 +31,7 @@ def request_mailing(sender, instance=None, created=False, **kwargs):
             }
 
             if instance.to_send:
-                logging.info(f"Message send to {client.phone_number}")
+                logging.info(f"Message {message.id} send to {client.id} with phone numbers {client.phone_number}")
                 send_message.apply_async((data, client.id, mailing.id),
                                          expires=mailing.date_end)
             else:
