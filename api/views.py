@@ -17,6 +17,12 @@ class MailingViewSet(viewsets.ModelViewSet):
             url_path='info',
             url_name='mailing_info')
     def get_info(self, request, pk) -> Response:
+        """
+        Information data about specific mailing
+        :param request:
+        :param pk:
+        :return Response:
+        """
         mailing = get_object_or_404(Mailing, pk=pk)
         serializer = MailingSerializer(mailing)
         serializer.is_valid(raise_exception=True)
@@ -27,6 +33,11 @@ class MailingViewSet(viewsets.ModelViewSet):
             url_path='info',
             url_name='mailing_full_info')
     def get_full_info(self, request) -> Response:
+        """
+        Information data about all mailing
+        :param request:
+        :return:
+        """
 
         mailing = Mailing.objects.all()
 

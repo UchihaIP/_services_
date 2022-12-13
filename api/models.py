@@ -23,7 +23,7 @@ class Mailing(models.Model):
             return False
 
     def __repr__(self):
-        return f"Mailing {self.id} from {self.date_start} {self.time_start}"
+        return f"Mailing {self.id} from {self.date_start}"
 
     class Meta:
         verbose_name = "Mailing"

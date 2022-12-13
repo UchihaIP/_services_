@@ -7,6 +7,12 @@ from api.models import Mailing
 
 def _generate_full_info(mailing_object: Type[Mailing],
                         mailing: QuerySet) -> dict[str, int | str | Any]:
+    """
+    Generates information about the number of mailings and their statuses
+    :param mailing_object:
+    :param mailing:
+    :return:
+    """
     export_dct = {"Mailing_count": len(mailing),
                   "Messages": ""}
     for mail in mailing:
